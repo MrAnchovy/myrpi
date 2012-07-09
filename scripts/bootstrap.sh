@@ -1,7 +1,10 @@
 #!/bin/bash
 
+ME=`whoami`
+
 sudo rm -rf /var/myrpi
 sudo mkdir /var/myrpi
+sudo chown $ME /var/myrpi
 cd /var/myrpi
 wget --no-check-certificate -q https://github.com/MrAnchovy/myrpi/tarball/master
 tar -xzvf master
