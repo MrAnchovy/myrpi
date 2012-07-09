@@ -17,7 +17,7 @@ echo "Downloading installation script"
 wget --no-check-certificate -q https://github.com/MrAnchovy/myrpi/tarball/master
 
 echo "------------------------------------------------------------"
-echo "Extracting installation script
+echo "Extracting installation script"
 echo "------------------------------------------------------------"
 
 tar -xzvf master
