@@ -2,12 +2,9 @@
 
 ME=`whoami`
 PWD=`pwd`
-ARG1=$1
-ARG2=$2
 
 echo "------------------------------------------------------------"
 echo "Cleaning up any old download and preparing for a new one"
-echo "[ARG1][$ARG2]"
 
 sudo rm -rf /var/myrpi
 sudo mkdir /var/myrpi
@@ -15,7 +12,7 @@ sudo chown $ME /var/myrpi
 cd /var/myrpi
 
 echo "------------------------------------------------------------"
-echo "Downloading installation script
+echo "Downloading installation script"
 
 wget --no-check-certificate -q https://github.com/MrAnchovy/myrpi/tarball/master
 
