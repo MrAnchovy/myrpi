@@ -16,6 +16,12 @@ server {
                 try_files $uri $uri/ /index.html /index.php /index.htm;
         }
 
+
+	location ~ \.(php|pl|py|jsp|asp|sh|cgi)$ {
+		return 403;
+		error_page 403 /403_error.html;
+	}
+
 	# error_page 404 /404.html;
 
 	# redirect server error pages to the static page /50x.html
