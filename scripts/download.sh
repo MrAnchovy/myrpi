@@ -25,8 +25,8 @@ tar -xzvf master
 if [[ "`ls`" =~ (MrAnchovy-myrpi-[A-Za-z0-9_-]*) ]]; then
 	mv "${BASH_REMATCH[1]}" myrpi
 
-	cd myrpi
-	./install.sh
+	cd myrpi/scripts
+	chmod +x *
 	cd $PWD
 else
 	echo "Error in download - please try again"

@@ -12,7 +12,7 @@ function fn_exit_ok {
 
 function fn_exit_error {
 	echo "------------------------------------------------------------"
-	fn_log_echo "MyRPi installer FAILED"
+	fn_log_echo "MyRPi installer FAILED - view log in $LOG"
 	exit 1
 }
 

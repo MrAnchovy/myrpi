@@ -1,6 +1,7 @@
 #!/bin/bash
 
 LOG=$1
+ME=`whoami`
 
 # UTILITY FUNCTIONS ===========================================================
 
@@ -98,11 +99,11 @@ function fn_nginx_vhost {
 
 	sudo mkdir -p /var/www
 	
-	sudo chown pi:pi /var/www
+	sudo chown $ME:$ME /var/www
 
 	cp ../templates/public_html /var/www/default
 
-	sudo mkdir -p /var/www/default/log
+	mkdir -p /var/www/default/log
 
 	sudo nginx -s reload
 }
