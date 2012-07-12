@@ -101,7 +101,9 @@ function fn_nginx_vhost {
 	
 	sudo chown $ME:$ME /var/hosts
 
-	cp ../templates/public_html /var/hosts/default
+	mkdir -p /var/hosts/default/public_html
+
+	cp ../templates/public_html/* /var/hosts/default/public_html
 
 	mkdir -p /var/hosts/default/log
 
