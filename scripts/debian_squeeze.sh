@@ -97,13 +97,13 @@ function fn_nginx_vhost {
 
 	#sudo chown root:root local-default
 
-	sudo mkdir -p /var/www
+	sudo mkdir -p /var/hosts
 	
-	sudo chown $ME:$ME /var/www
+	sudo chown $ME:$ME /var/hosts
 
-	cp ../templates/public_html /var/www/default
+	cp ../templates/public_html /var/hosts/default
 
-	mkdir -p /var/www/default/log
+	mkdir -p /var/hosts/default/log
 
 	sudo nginx -s reload
 }
