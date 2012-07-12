@@ -57,7 +57,7 @@ function fn_nginx_install {
 
 	fn_log_echo "Installing nginx"
 
-	sudo apt-get install nginx 2>> LOG
+	sudo apt-get install nginx 2>> $LOG
 
 	if [ "$?" != "0" ]; then
 		fn_log_echo "FAILED: could not install nginx - exiting"
@@ -70,7 +70,7 @@ function fn_nginx_reinstall {
 
 	fn_log_echo "Re-installing nginx"
 
-	sudo apt-get install --reinstall nginx 2>> LOG
+	sudo apt-get install --reinstall nginx 2>> $LOG
 
 	if [ "$?" != "0" ]; then
 		fn_log_echo "FAILED: could not re-install nginx - exiting"
@@ -96,7 +96,12 @@ function fn_nginx_vhost {
 
 	#sudo chown root:root local-default
 
-	sudo mkdir -p /var/www/default/public_html
+	sudo mkdir -p /var/www
+	
+	sudo chown pi:pi /var/www
+
+	cp ../templates/public_html /var/www/default
+
 	sudo mkdir -p /var/www/default/log
 
 	sudo nginx -s reload
@@ -114,7 +119,7 @@ function fn_php_install {
 
 	fn_log_echo "Installing PHP"
 
-	sudo apt-get install php5-cgi 2>> LOG
+	sudo apt-get install php5-cgi 2>> $LOG
 
 	if [ "$?" != "0" ]; then
 		fn_log_echo "FAILED: could not install PHP - exiting"
@@ -127,7 +132,7 @@ function fn_php_reinstall {
 
 	fn_log_echo "Re-installing PHP"
 
-	sudo apt-get install --reinstall php5-cgi 2>> LOG
+	sudo apt-get install --reinstall php5-cgi 2>> $LOG
 
 	if [ "$?" != "0" ]; then
 		fn_log_echo "FAILED: could not re-install PHP - exiting"
@@ -187,30 +192,6 @@ function mysql_conf {
 }
 
 
-
-function fn_http_index {
-	CONTENT="<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Raspberry Pi (TM) web server</title>
-</head>
-
-<body>
-<h1>Raspberry Pi (TM) web server</h1>
-<p>Installed and ready to go. Visit
-<a href="http://www.myrpi.net">myrpi.net</a> for more.
-</p>
-</body>
-</html>
-"
-
-	## create a new vhost file, move it into place and link it
-	echo "$CONTENT" > index.html
-	mv index.html /var/www/default/public_html
-	sudo ln -sf /etc/nginx/sites-available/local-default /etc/nginx/sites-enabled/local-default
-
-}
 
 
 # CODE STARTS HERE ============================================================
