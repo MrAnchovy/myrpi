@@ -7,16 +7,15 @@ Version 0.9.001
 
 ### Quick Start
 
-1. Logged in to a working RPi, enter the lines
+1. Logged in to a working RPi, enter the line  
+   `wget -O - http://www.myrpi.net/pub/download.sh | bash`
 
-```
-wget -O - http://www.myrpi.net/pub/download.sh | bash  
-/var/myrpi/myrpi/scripts/install.sh
-```
+2. wait for the download and the script to run and then enter  
+   `/var/myrpi/myrpi/scripts/install.sh`
 
-2. Give sensible answers to the questions
+3. Give sensible answers to the questions
 
-3. Taking note of your RPi's IP address, visit its new home page!
+4. Taking note of your RPi's IP address, visit its new home page!
 
 ### More information
 
