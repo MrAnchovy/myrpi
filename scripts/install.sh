@@ -1,6 +1,8 @@
 #!/bin/bash
 
 LOG=/tmp/myrpi.log
+PWD=`pwd`
+cd /var/myrpi/myrpi/scripts
 
 function fn_exit_ok {
 	echo "------------------------------------------------------------"
