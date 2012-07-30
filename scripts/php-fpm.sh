@@ -17,8 +17,9 @@ sudo ln -s /etc/nginx/sites-available/default-php-fpm /etc/nginx/sites-enabled/d
 
 ## Create the vhost directory and make the user own it
 ##
-sudo mkdir -p /var/hosts
+sudo mkdir -p /var/hosts/default
 sudo chown $ME:$ME /var/hosts
+sudo chown $ME:$ME /var/hosts/default
 
 ## Create directories for application logs, file storage and cache and make the
 ## web server process own them so they are writeable by web scripts
