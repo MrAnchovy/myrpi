@@ -35,7 +35,7 @@ sudo chown $WWW_USER /var/hosts/default/tmp
 ## be owned by the current user so will not be writeable by web scripts.
 ##
 mkdir -p /var/hosts/default/public_html
-cp $TEMPLATES_PATH/templates/public_html/* /var/hosts/default/public_html
+cp $TEMPLATES_PATH/public_html/* /var/hosts/default/public_html
 
 sudo nginx -s reload
 
