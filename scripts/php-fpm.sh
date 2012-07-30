@@ -3,7 +3,7 @@
 ## Set up the context
 ##
 ME=`whoami`
-WWW_USER=`www-data:www-data`
+WWW_USER=www-data:www-data
 TEMPLATES_PATH=/var/myrpi/myrpi/templates
 
 ## Disable any existing hosts
