@@ -55,13 +55,12 @@ server {
 		## next line important to prevent upload exploit e.g. www.mydomain.com/permitted_upload.jpg/anything.php
 		try_files $uri =404;
 		fastcgi_split_path_info ^(.+\.php)(/.+)$;
-		#NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
+		# NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
+		# fastcgi_intercept_errors on;
+		fastcgi_pass unix:/var/run/php5-fpm.sock;
+		fastcgi_index index.php;
 		include fastcgi_params;
-		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-		fastcgi_intercept_errors on;
-		# fastcgi_pass 127.0.0.1:9000;
-		fastcgi_pass unix:tmp/php.sock;
-}
+	}
 
 	# If we are not using rewrites we can do this
 	try_files $uri index.html index.htm index.php =404;
