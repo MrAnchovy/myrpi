@@ -10,10 +10,10 @@ Version 0.9.001
 1. Logged in to a working RPi, enter the line  
    `wget -O - http://www.myrpi.net/pub/download.sh | bash`
 
-2. wait for the download and the script to run and then enter  
-   `/var/myrpi/myrpi/scripts/install.sh`
+2. wait for the download and the script to run and then switch to the downloaded scripts directory
+   `cd /var/myrpi/myrpi/scripts`
 
-3. Give sensible answers to the questions
+3. Find your Linux distribution at http://www.myrpi.net/wiki/tasks:installation and follow the instructions
 
 4. Taking note of your RPi's IP address, visit its new home page!
 
